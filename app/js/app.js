@@ -9,8 +9,13 @@ CR_Animation.config(['$routeProvider', function($routeProvider) {
 	})
 	.when('/youtube', {
 		templateUrl: './views/youtube.html'
+		// controller: 'youtubeCtrl'
 	})
 	.when('/htmlVid', {
 		templateUrl: './views/html5vid.html'
 	})
+	.otherwise({
+		redirectTo: '/'
+	})
 }]);
+

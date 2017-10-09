@@ -31,6 +31,74 @@
 <script type="text/javascript" src="../node_modules/is-in-viewport/lib/isInViewport.js"></script>
 <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/app.min.js"></script>
+<script type="text/javascript" src="js/controllers/youtubeCtrl.js"></script>
 <script type="text/javascript" src="js/scripts.min.js"></script>
+<script type="text/javascript">
+	var LoadVideo = function(player_id){
+
+    var Program = {
+    
+        Init: function(){
+            this.NewPlayer();
+            this.EventHandler();
+        },
+
+        NewPlayer: function(){
+            var _this = this;
+            this.Player = new YT.Player(player_id, {});
+            _this.Player.$element = $('#' + player_id);
+        },
+
+        Play: function(){
+        	if( this.Player.getPlayerState() === 1 ) return;
+            this.Player.playVideo();
+        },
+
+        Pause: function(){
+        	if( this.Player.getPlayerState() === 2 ) return;
+            this.Player.pauseVideo();
+        },
+
+        ScrollControl: function(){
+        	rrr
+        },
+
+        EventHandler: function(){
+            var _this = this;
+            $(window).on('scroll', function(){
+                _this.ScrollControl();
+            });
+        }
+        
+    };
+    
+    var Utils = {
+    
+        /** @author http://stackoverflow.com/a/7557433/1684970 */
+        IsElementInViewport: function(el){
+            if (typeof jQuery === "function" && el instanceof jQuery) el = el[0];
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        
+    };
+    
+    return Program.Init();
+
+};
+
+LoadVideo('playerA');
+
+// or (loop mode)
+
+//$('iframe').each(function(){
+//	LoadVideo($(this).attr('id'));
+//});
+</script>
 </body>
 </html>
