@@ -8,11 +8,26 @@ CR_Animation.config(['$routeProvider', function($routeProvider) {
 		templateUrl: './views/home.html'
 	})
 	.when('/youtube', {
-		templateUrl: './views/youtube.html'
-		// controller: 'youtubeCtrl'
+		templateUrl: './views/youtube.html',
+		controller: 'youtubeCtrl'
 	})
-	.when('/htmlVid', {
-		templateUrl: './views/html5vid.html'
+	.when('/html-video', {
+		templateUrl: './views/html-video.html'
+	})
+	.when('/gifs', {
+		templateUrl: './views/gifs.html'
+	})
+	.when('/css-animation', {
+		templateUrl: './views/css-animation.html'
+	})
+	.when('/parallax', {
+		templateUrl: './views/parallax.html'
+	})
+	.when('/svg-animation', {
+		templateUrl: './views/svg-animation.html'
+	})
+	.when('/canvas', {
+		templateUrl: './views/canvas.html'
 	})
 	.otherwise({
 		redirectTo: '/'
