@@ -17,3 +17,12 @@ nav {
 		}
 	}
 }
+
+.controls-container {
+	position: fixed;
+	top: 0;
+	right: 0;
+	.btn {
+		padding: 10px 20px;
+	}
+}

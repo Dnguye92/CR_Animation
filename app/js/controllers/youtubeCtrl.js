@@ -1,10 +1,9 @@
 CR_Animation.controller('youtubeCtrl', function($scope) {
-	// var tag = document.createElement('script');
-	// tag.src = 'https://www.youtube.com/iframe_api';
-	// var firstScriptTag = document.getElementsByTagName('script')[0];
-	// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
 	var player;
+	var playBtn = document.getElementById('play');
+	var pauseBtn = document.getElementById('pause');
+	var switchBtnClass = document.getElementsByClassName('fa-pause');
+
 	var LoadVideo = function(player_id){
 
 	    var Program = {
@@ -64,8 +63,15 @@ CR_Animation.controller('youtubeCtrl', function($scope) {
 
 	    };
 	    Program.Init();
+	    playBtn.addEventListener('click', Program.Play);
+	    pauseBtn.addEventListener('click', Program.Pause);
+
+	    console.log(Program.Pause)
 	};
+
 	window.onload = function(){
 	    LoadVideo('myYTPlayer');
 	};
+
+
 });
