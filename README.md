@@ -2,7 +2,7 @@
 
 ### Running Local Dev Environment
 ```
-$ git clone https://github.com/Dnguye92/charlotte-styleguide.git
+$ git clone https://github.com/Dnguye92/CR_Animation.git
 $ cd charlotte-styleguide
 $ npm install
 $ gulp
