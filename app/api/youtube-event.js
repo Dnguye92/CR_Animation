@@ -1,3 +1,4 @@
+//this is the logic to see if the player is in view
 var Utils = {
     IsElementInViewport: function(el){
         if (typeof jQuery === "function" && el instanceof jQuery) el = el[0];
