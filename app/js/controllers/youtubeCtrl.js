@@ -30,6 +30,7 @@ CR_Animation.controller('youtubeCtrl', function($scope) {
 	        },
 
 	        ScrollControl: function(){
+	        	console.log(Utils.IsElementInViewport(player.$element[0]));
 	            if( Utils.IsElementInViewport(player.$element[0]) ) this.Play();
 	            else this.Pause();
 	        },
@@ -53,11 +54,12 @@ CR_Animation.controller('youtubeCtrl', function($scope) {
 	        IsElementInViewport: function(el){
 	            if (typeof jQuery === "function" && el instanceof jQuery) el = el[0];
 	            var rect = el.getBoundingClientRect();
+	            console.log(rect)
 	            return (
-	                rect.top >= 0 &&
 	                rect.left >= 0 &&
-	                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-	                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			        rect.right <= window.innerWidth &&
+			        rect.top  <= window.innerHeight - rect.height &&
+			        rect.top >= 0
 	            );
 	        }
 
@@ -66,7 +68,7 @@ CR_Animation.controller('youtubeCtrl', function($scope) {
 	    playBtn.addEventListener('click', Program.Play);
 	    pauseBtn.addEventListener('click', Program.Pause);
 
-	    console.log(Program.Pause)
+	    //console.log(Program.Pause)
 	};
 
 	window.onload = function(){
