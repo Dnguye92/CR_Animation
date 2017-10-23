@@ -20,12 +20,18 @@ CR_Animation.controller('youtubeCtrl', function($scope) {
 	        },
 
 	        Play: function(){
-	            if( player.getPlayerState() === 1 ) return;
+	            if( player.getPlayerState() === 1 ) {
+	            	console.log('The Player is playing');
+	            	return;
+	            }
 	            player.playVideo();
 	        },
 
 	        Pause: function(){
-	            if( player.getPlayerState() === 2 ) return;
+	            if( player.getPlayerState() === 2 ) {
+	            	console.log('The Player is paused');
+	            	return;
+	            }
 	            player.pauseVideo();
 	        },
 
@@ -53,11 +59,20 @@ CR_Animation.controller('youtubeCtrl', function($scope) {
 	        IsElementInViewport: function(el){
 	            if (typeof jQuery === "function" && el instanceof jQuery) el = el[0];
 	            var rect = el.getBoundingClientRect();
+	            
+	            // console.log('Current bottom pos. is: ', rect.bottom);
+	            // console.log('Current innerHeight is: ', window.innerHeight)
+	            console.log('rect.top: ', rect.top);
+	            console.log('innerHeight: ', window.innerHeight);
+	            console.log('rect.height: ', rect.height);
+	            console.log('innerHeight - rect.height: ', (window.innerHeight - rect.height));
+	            console.log('===================================');
+	            console.log('rect.bottom: ', rect.bottom);
 	            return (
-	                rect.top >= 0 &&
 	                rect.left >= 0 &&
-	                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-	                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+		            rect.right <= window.innerWidth &&
+		            rect.top  <= window.innerHeight - rect.height &&
+		            rect.bottom >= window.innerHeight - rect.height
 	            );
 	        }
 
