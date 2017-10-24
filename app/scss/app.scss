@@ -23,12 +23,25 @@ body {
 }
 
 .controls-container {
+	background: rgba(255, 255, 255, 0.75);
+	border-radius: 4px;
+	padding: 10px;
 	position: fixed;
 	top: 50%;
 	right: 0;
+	width: 200px;
 	z-index: 10;
 	.btn {
 		padding: 10px 20px;
+		color: #ffffff;
+	}
+	#play, #pause {
+		background: #D12729;
+		border-color: #D12729;
+	}
+	#cssPlay, #cssPause {
+		background: #e21b70;
+		border-color: #e21b70;
 	}
 }
 
