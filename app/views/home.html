@@ -70,7 +70,7 @@
 <br/>
 <br/>
 <br/>
-<div class="container" ng-controller="youtubeCtrl" id="youtube">
+<div class="container-fluid" ng-controller="youtubeCtrl" id="youtube">
 	<div class="row">
 		<div class="col-xs-12 text-center">
 			<h1>Youtube Animation</h1>
@@ -80,8 +80,11 @@
 	</div>
 	<div class="controls-container">
 		<p>Youtube Controls</p>
-		<a class="btn btn-default" id="play" ><i class="fa fa-play fa-2x" aria-hidden="true"></i></a>
+		<a class="btn btn-default" id="play"><i class="fa fa-play fa-2x" aria-hidden="true"></i></a>
 		<a class="btn btn-default" id="pause"><i class="fa fa-pause fa-2x" aria-hidden="true"></i></a>
+		<p>CSS Animation Controls</p>
+		<a class="btn btn-primary" id="cssPlay"><i class="fa fa-play fa-2x" aria-hidden="true"></i></a>
+		<a class="btn btn-primary" id="cssPause"><i class="fa fa-pause fa-2x" aria-hidden="true"></i></a>
 	</div>
 </div>
 <br/>
@@ -156,12 +159,12 @@
 <br/>
 <br/>
 <br/>
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="cssAniCtrl">
 	<div class="home-hero_wrapper">
-		<div class="home_floral-1"></div>
-		<div class="home_floral-2"></div>
-		<div class="home_floral-3"></div>
-		<div class="home_floral-4"></div>
+		<div class="home_floral-1 animate"></div>
+		<div class="home_floral-2 animate"></div>
+		<div class="home_floral-3 animate"></div>
+		<div class="home_floral-4 animate"></div>
 		<div class="home-hero_text">
 			<h2 class="promo-title logo-ready-2-own">
 				Ready 2 Bloom

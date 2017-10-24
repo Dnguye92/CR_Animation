@@ -60,8 +60,6 @@ CR_Animation.controller('youtubeCtrl', function($scope) {
 	            if (typeof jQuery === "function" && el instanceof jQuery) el = el[0];
 	            var rect = el.getBoundingClientRect();
 	            
-	            // console.log('Current bottom pos. is: ', rect.bottom);
-	            // console.log('Current innerHeight is: ', window.innerHeight)
 	            console.log('rect.top: ', rect.top);
 	            console.log('innerHeight: ', window.innerHeight);
 	            console.log('rect.height: ', rect.height);
