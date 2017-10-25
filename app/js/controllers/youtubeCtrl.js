@@ -60,12 +60,12 @@ CR_Animation.controller('youtubeCtrl', function($scope) {
 	            if (typeof jQuery === "function" && el instanceof jQuery) el = el[0];
 	            var rect = el.getBoundingClientRect();
 	            
-	            console.log('rect.top: ', rect.top);
-	            console.log('innerHeight: ', window.innerHeight);
-	            console.log('rect.height: ', rect.height);
-	            console.log('innerHeight - rect.height: ', (window.innerHeight - rect.height));
-	            console.log('===================================');
-	            console.log('rect.bottom: ', rect.bottom);
+	            // console.log('rect.top: ', rect.top);
+	            // console.log('innerHeight: ', window.innerHeight);
+	            // console.log('rect.height: ', rect.height);
+	            // console.log('innerHeight - rect.height: ', (window.innerHeight - rect.height));
+	            // console.log('===================================');
+	            // console.log('rect.bottom: ', rect.bottom);
 	            return (
 	                rect.left >= 0 &&
 		            rect.right <= window.innerWidth &&
@@ -73,13 +73,12 @@ CR_Animation.controller('youtubeCtrl', function($scope) {
 		            rect.bottom >= window.innerHeight - rect.height
 	            );
 	        }
-
 	    };
 	    Program.Init();
 	    playBtn.addEventListener('click', Program.Play);
 	    pauseBtn.addEventListener('click', Program.Pause);
 
-	    console.log(Program.Pause)
+	    // console.log(Program.Pause)
 	};
 
 	window.onload = function(){
