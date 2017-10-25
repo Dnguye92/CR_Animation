@@ -59,13 +59,6 @@ CR_Animation.controller('youtubeCtrl', function($scope) {
 	        IsElementInViewport: function(el){
 	            if (typeof jQuery === "function" && el instanceof jQuery) el = el[0];
 	            var rect = el.getBoundingClientRect();
-	            
-	            // console.log('rect.top: ', rect.top);
-	            // console.log('innerHeight: ', window.innerHeight);
-	            // console.log('rect.height: ', rect.height);
-	            // console.log('innerHeight - rect.height: ', (window.innerHeight - rect.height));
-	            // console.log('===================================');
-	            // console.log('rect.bottom: ', rect.bottom);
 	            return (
 	                rect.left >= 0 &&
 		            rect.right <= window.innerWidth &&
