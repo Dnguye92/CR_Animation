@@ -3,7 +3,7 @@
 ### Running Local Dev Environment
 ```
 $ git clone https://github.com/Dnguye92/CR_Animation.git
-$ cd charlotte-styleguide
+$ cd CR_Animation
 $ npm install
 $ gulp
 ```
