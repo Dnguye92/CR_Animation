@@ -3,15 +3,22 @@ CR_Animation.controller('html5Ctrl', function($scope) {
 	var html5Video = document.createElement('video');
 	var source = document.createElement('source');
 	var product = document.createElement('img');
+	var gif = document.createElement('img');
 
 	html5Video.setAttribute('loop', 'true');
 	html5Video.setAttribute('id', 'html5Video');
 	html5Video.setAttribute('preload', 'none');
+	html5Video.setAttribute('muted', '');
+	html5Video.setAttribute('autoplay', '');
 
 	source.setAttribute('type', 'video/mp4');
 	source.src = 'img/Butterfly.mp4';
 
 	product.src = 'img/test-prod.jpg';
+
+	gif.src = "img/cat-keyboard.gif";
+	gif.className = 'gif';
+	
 	videoContainer.appendChild(product);
 
 	html5Video.appendChild(source);
@@ -32,12 +39,12 @@ CR_Animation.controller('html5Ctrl', function($scope) {
            rect.right <= window.innerWidth &&
            rect.top <= window.innerHeight - rect.height &&
            rect.bottom >= window.innerHeight - rect.height) {
-        	product.replaceWith(html5Video);
+        	product.replaceWith(gif);
         	console.log('This video element is within the VW');
-        	html5Video.play();
+        	// html5Video.play();
         } else {
         	console.log('This video element IS NOT within the VW');
-        	html5Video.replaceWith(product);
+        	gif.replaceWith(product);
         }
     };
     window.addEventListener('scroll', IsElementInViewport, false);
