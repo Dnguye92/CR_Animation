@@ -5,11 +5,11 @@ CR_Animation.controller('html5Ctrl', function($scope) {
 	var product = document.createElement('img');
 	var gif = document.createElement('img');
 
-	html5Video.setAttribute('loop', 'true');
+	html5Video.setAttribute('loop', '');
 	html5Video.setAttribute('id', 'html5Video');
-	html5Video.setAttribute('preload', 'none');
 	html5Video.setAttribute('muted', '');
-	html5Video.setAttribute('autoplay', '');
+	html5Video.setAttribute('playsinline', '');
+	html5Video.setAttribute('autoplay', 'true');
 
 	source.setAttribute('type', 'video/mp4');
 	source.src = 'img/Butterfly.mp4';
@@ -18,7 +18,7 @@ CR_Animation.controller('html5Ctrl', function($scope) {
 
 	gif.src = "img/cat-keyboard.gif";
 	gif.className = 'gif';
-	
+
 	videoContainer.appendChild(product);
 
 	html5Video.appendChild(source);
@@ -41,7 +41,7 @@ CR_Animation.controller('html5Ctrl', function($scope) {
            rect.bottom >= window.innerHeight - rect.height) {
         	product.replaceWith(gif);
         	console.log('This video element is within the VW');
-        	// html5Video.play();
+        	html5Video.play();
         } else {
         	console.log('This video element IS NOT within the VW');
         	gif.replaceWith(product);
